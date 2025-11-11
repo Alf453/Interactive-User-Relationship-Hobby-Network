@@ -1,4 +1,3 @@
-import React from "react";
 import { AppProvider } from "./context/AppStore";
 import Sidebar from "./components/Sidebar";
 import GraphCanvas from "./components/GraphCanvas";

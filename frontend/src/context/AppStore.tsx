@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 import api from "../api/client";
 
@@ -103,8 +97,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
 
       // ✅ FIXED this part — loop on userList, not u.data
       const hobbySet = new Set<string>(hobbies);
-      userList.forEach((user) => {
-        (user.hobbies || []).forEach((h) => hobbySet.add(h));
+      userList.forEach((user: User) => {
+        (user.hobbies || []).forEach((h: string) => hobbySet.add(h));
       });
 
       setHobbies(Array.from(hobbySet));

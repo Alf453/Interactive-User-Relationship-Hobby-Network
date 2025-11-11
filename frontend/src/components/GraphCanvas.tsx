@@ -1,11 +1,16 @@
 import React, { useCallback, useMemo } from "react";
-import ReactFlow, {
+import {
+  ReactFlow,
   Background,
   Controls,
+  addEdge,
   useEdgesState,
   useNodesState,
-} from "reactflow";
-import "reactflow/dist/style.css";
+  Connection,
+  Edge,
+} from "@xyflow/react";
+
+import "@xyflow/react/dist/style.css";
 import { useApp } from "../context/AppStore";
 import HighScoreNode from "./nodes/HighScoreNode";
 import LowScoreNode from "./nodes/LowScoreNode";
