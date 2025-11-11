@@ -1,0 +1,12 @@
+import express from "express";
+import cors from "cors";
+import userRoutes from "./routes/userRoutes";
+import graphRoutes from "./routes/graphRoutes";
+import { errorHandler } from "./middlewares/errorHandler";
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use("/api/users", userRoutes);
+app.use("/api/graph", graphRoutes);
+app.use(errorHandler);
+export default app;
