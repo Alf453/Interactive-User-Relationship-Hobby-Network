@@ -4,25 +4,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [
-    react({
-      jsxRuntime: "automatic", // ✅ force react 17+/18+ jsx transform
-      babel: {
-        plugins: [
-          ["@babel/plugin-transform-react-jsx", { runtime: "automatic" }], // ✅ fallback for CI
-        ],
-      },
-    }),
+    react(), // ✅ no manual JSX config needed
     tailwindcss(),
   ],
   resolve: {
     alias: {
-      react: "react",
-      "react/jsx-runtime": "react/jsx-runtime", // ✅ ensures rollup can resolve it on Linux
-    },
-  },
-  build: {
-    rollupOptions: {
-      external: [], // ✅ prevent rollup from "externalizing" react/jsx-runtime
+      // ✅ optional safety (helps CI resolve jsx-runtime)
+      "react/jsx-runtime": "react/jsx-runtime",
     },
   },
 });
