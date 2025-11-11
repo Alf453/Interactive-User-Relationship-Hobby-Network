@@ -3,7 +3,6 @@ import {
   ReactFlow,
   Background,
   Controls,
-  addEdge,
   useEdgesState,
   useNodesState,
   Connection,
