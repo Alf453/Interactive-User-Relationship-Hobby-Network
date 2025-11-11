@@ -1,13 +1,13 @@
-import React, { useCallback, useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import {
   ReactFlow,
   Background,
   Controls,
   useEdgesState,
   useNodesState,
-  Connection,
-  Edge,
 } from "@xyflow/react";
+
+import type { Connection, Edge } from "@xyflow/react";
 
 import "@xyflow/react/dist/style.css";
 import { useApp } from "../context/AppStore";
